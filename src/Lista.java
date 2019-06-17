@@ -82,14 +82,12 @@ public class Lista {
 				}
 
 				if (aux3.proximo != null) {
-					// if(getElem(j).valor > getElem(j + 1).valor) {
 					if (aux3.valor > aux3.proximo.valor) {
 
 						aux1 = aux3;
 						aux2 = aux3.proximo;
 						trocarElementos(aux1, aux2);
 						troca = true;
-						// }
 					}
 				}
 				aux3 = aux3.proximo;
@@ -163,6 +161,7 @@ public class Lista {
 		while (aux1.proximo != null) {
 			
 			aux2 = aux1;
+			
 			while (aux2 != null) {
 
 				if (aux2.valor < aux3.valor) {
@@ -187,46 +186,30 @@ public class Lista {
 			inicio = aux2;
 		}
 		
-		Elemento aux3 = aux2.proximo;
-
-		if (aux1.proximo != null) {
-			if (aux1.proximo.valor == aux2.valor) {
-				aux2.proximo = aux1;
-			} else {
-
-				aux2.proximo = aux1.proximo;
-			}
-		}
-		aux1.proximo = aux3;
-
-		aux2.anterior = aux1.anterior;
-
-		if (aux2.proximo != null) {
-			aux2.proximo.anterior = aux2;
-			if (aux2.proximo.valor != aux1.valor) {
-				aux2.proximo.proximo = aux1;
-				
-			}
-
-		}
-		
-		if(aux2.anterior != null) {
-			aux2.anterior.proximo = aux2;
-		}
-		
-
-		if (aux1.anterior != null) {
-			if (aux1.anterior.valor != aux2.valor) {
-				aux1.anterior = aux2.proximo;
-			}
-		} else {
-			aux1.anterior = aux2.proximo;
-		}
+		Elemento aux3 = aux1.proximo;
+		aux1.proximo = aux2.proximo;
+		aux2.proximo = aux3;
 
 		if (aux1.proximo != null) {
 			aux1.proximo.anterior = aux1;
 		}
 
+		if (aux2.proximo != null) {
+			aux2.proximo.anterior = aux2;
+		}
+
+		Elemento aux4 = aux1.anterior;
+		aux1.anterior = aux2.anterior;
+		aux2.anterior = aux4;
+
+		if (aux1.anterior != null) {
+			aux1.anterior.proximo = aux1;
+		}
+
+		if (aux2.anterior != null) {
+			aux2.anterior.proximo = aux2;
+		}
+		
 		elemProximo = aux2;
 	}
 

@@ -10,6 +10,7 @@ public class ListaDETest {
 		lista.inserirFinal(new Elemento(1));
      	lista.inserirFinal(new Elemento(2));
      	lista.inserirFinal(new Elemento(4));
+     	lista.inserirFinal(new Elemento(-1));
 
 		lista.selectSort();
 		lista.imprimirLista();
