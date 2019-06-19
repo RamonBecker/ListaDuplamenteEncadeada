@@ -4,7 +4,6 @@ public class Elemento {
 	public int valor;
 	public Elemento proximo;
 	public Elemento anterior;
-	public int posicao;
 
 	public Elemento(int valor) {
 		this.valor = valor;
@@ -14,12 +13,12 @@ public class Elemento {
 
 	public void imprimir() {
 		if (!(anterior == null)) {
-			System.out.print("\tANTERIOR: " + anterior.valor + "\n");
+			System.out.print("\tANTERIOR: " + anterior.valor + "\n\n");
 		}
 		System.out.print("\t ATUAL: " + valor);
 
 		if (!(proximo == null)) {
-			System.out.print("\nPROXIMO: " + proximo.valor + "\n");
+			System.out.print("\n\n\tPROXIMO: " + proximo.valor + "\n");
 		}
 	}
 
