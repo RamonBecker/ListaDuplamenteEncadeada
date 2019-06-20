@@ -45,15 +45,6 @@ public class Lista {
 		this.size++;
 	}
 
-	public void imprimirLista() {
-		Elemento aux = inicio;
-
-		while (aux != null) {
-			aux.imprimir();
-			aux = aux.proximo;
-		}
-	}
-
 	public void bubbleSort() {
 
 		Elemento aux1 = null;
@@ -123,7 +114,7 @@ public class Lista {
 		}
 	}
 
-	public void selectSort() {
+	public void selectionSort() {
 		Elemento aux1 = this.inicio;
 		Elemento aux2 = null;
 		Elemento aux3 = this.inicio;
@@ -186,24 +177,26 @@ public class Lista {
 	}
 
 	public void insertionSort() {
-		Elemento aux1 = this.inicio;
-		Elemento aux2 = null;
-		Elemento aux3 = this.inicio;
+		Elemento aux1 = this.inicio.proximo;
+		Elemento aux3 = this.inicio.proximo;
 		Elemento aux4 = null;
 
 		while (aux1 != null) {
 
-			aux2 = aux1;
 			
-				while (aux3.anterior != null && aux3.anterior.valor > aux1.valor) {
+			while (aux1 != null && aux1.anterior.valor > aux1.valor) {
 
-					aux4 = aux3;
-
-					trocaInsertionSort(aux4, aux2);
-					aux3 = aux3.anterior;
+				aux4 = aux1.anterior;
+				trocaInsertionSort(aux4, aux1);
+				
+				aux3 = aux3.anterior;
+				
+				if(aux3 == null) {
+					break;
 				}
 				
-		
+			}
+			
 			aux1 = aux1.proximo;
 			aux3 = aux1;
 		}
@@ -237,7 +230,19 @@ public class Lista {
 		if (aux2.anterior != null) {
 			aux2.anterior.proximo = aux2;
 		}
-		
+
 		elemProximo = aux1;
 	}
+
+	public void imprimirLista() {
+		Elemento aux = inicio;
+
+		while (aux != null) {
+			aux.imprimir();
+			aux = aux.proximo;
+		}
+	}
+
+	
+	
 }
