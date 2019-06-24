@@ -6,10 +6,10 @@ public class Main {
 
 		Lista lista = new Lista();
 	
-     	Util.preencherLista10MilElementos_1MilValores(lista);
+     	Util.preencherLista10MilElementos_1MilhaoValores(lista);
      
-     	lista.bubbleSort();
-     	
+        lista.insertionSort();
+          
      	Util.relatorio();
 	}
 }

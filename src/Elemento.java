@@ -10,21 +10,4 @@ public class Elemento {
 		this.proximo = null;
 		this.anterior = null;
 	}
-
-	public void imprimir() {
-		if (!(anterior == null)) {
-			System.out.print("\tANTERIOR: " + anterior.valor + "\n\n");
-		}
-		System.out.print("\t ATUAL: " + valor);
-
-		if (!(proximo == null)) {
-			System.out.print("\n\n\tPROXIMO: " + proximo.valor + "\n");
-		}
-	}
-
-	@Override
-	public String toString() {
-		return "Elemento [d= " + valor + "]";
-	}
-
 }

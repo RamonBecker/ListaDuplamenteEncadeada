@@ -99,7 +99,7 @@ public class Lista {
 						aux2 = aux3.proximo;
 						trocarElementos(aux1, aux2);
 						troca = true;
-						Util.ciclosClok ++;
+					
 					}
 				}
 				aux3 = aux3.proximo;
@@ -141,8 +141,6 @@ public class Lista {
 
 			trocarElementos(aux4, aux3);
 			
-			Util.ciclosClok ++;
-			
 			aux1 = aux3;
 			aux3 = aux3.proximo;
 			aux1 = aux1.proximo;
@@ -156,39 +154,32 @@ public class Lista {
 		Util.horarioInicial();
 		
 		Elemento aux1 = this.inicio.proximo;
-		Elemento aux3 = this.inicio.proximo;
+		Elemento aux3 = this.inicio;
 		Elemento aux4 = null;
 
 		while (aux1 != null) {
-
+			
+		
 			while (aux1 != null && aux1.anterior.valor > aux1.valor) {
 
 				aux4 = aux1.anterior;
 				trocarElementos(aux4, aux1);
-				Util.ciclosClok ++;
+				
 				aux3 = aux3.anterior;
 
 				if (aux3 == null) {
 					break;
 				}
-
+				
+				if(aux1.anterior == null) {
+					break;
+				}
 			}
 			
 			aux1 = aux1.proximo;
 			aux3 = aux1;
-			
 		}
 		
 		Util.horarioFinal();
 	}
-
-	public void imprimirLista() {
-		Elemento aux = inicio;
-
-		while (aux != null) {
-			aux.imprimir();
-			aux = aux.proximo;
-		}
-	}
-
 }
