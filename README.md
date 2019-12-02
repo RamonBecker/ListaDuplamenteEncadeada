@@ -1,4 +1,4 @@
-# ProjetoFilaDuplamenteEncadeada
+# ProjetoListaDuplamenteEncadeada
 
 Projeto apresentado na discplina de Estrutura da Dados.
 
